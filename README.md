@@ -1,3 +1,3 @@
 ## Olá!
 
-Sou Miguel Prytoluk e aqui em breve estará meu portfólio!
+Sou Miguel Prytoluk, desenvolvedor, e aqui em breve estará meu portfólio!
