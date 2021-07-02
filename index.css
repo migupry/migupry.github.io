@@ -1,0 +1,25 @@
+body {
+  margin-top: 25%;
+  background-color: #001b33;
+}
+*{
+font-family: 'Roboto', sans-serif;
+font-size: 1.25em;
+}
+h1 {
+  color: #80ffbb;
+  margin-left: 20px;
+}
+p {
+  color: #ff9d00;
+  margin-left: 20px;
+  max-width: 1000px;
+}
+
+.important{
+color: #ff0044;	
+}
+
+a, a:hover, a:focus, a:active {
+      color: inherit;
+ }
