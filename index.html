@@ -1,14 +1,118 @@
 <html>
   <head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="refresh" content="3" > -->
     <title>Miguel Prytoluk</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/6716bc546d.js" crossorigin="anonymous"></script>
+    <!-- favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
   </head>
   <body>
-    <p><a href="https://www.linkedin.com/in/miguel-prytoluk-407a62213" class="important">Miguel Prytoluk</a></p>
-    <p>Desenvolvedor com foco em Web Scraping, Data Science e Desenvolvimento Web e Multi Plataforma.</p>
-    <p>Co-criador do <a class="important" href="https://chataround.us/c/bigbang/">ChatAround</a>.</p>
+    <span class="aligned important emphasis">Miguel Prytoluk</span>
+    <a href="https://www.linkedin.com/in/miguel-prytoluk-407a62213" target="_blank" class="icon-a">
+      <i class="fa-brands fa-linkedin important"></i>
+    </a>
+    <a href="https://github.com/migupry" target="_blank" class="icon-a">
+      <i class="fa-brands fa-github-square important"></i>
+    </a>
+    <p>Cientista de dados e <span class="important">.dev</span> multidisciplinar.</p>
+    <div class="port-meta">
+      <div id="port-ds">
+        <a href="javascript:void(0)" class="icon-a">
+          <i class="fa-solid fa-caret-down rotate click-hide important" hideObj="ds-catalog"></i>
+        </a>
+        <h1>Portfólio Data Science:</h1>
+        <div id="ds-catalog" class="port-catalog">
+          <div class="port-container">
+            <a href="https://colab.research.google.com/drive/19U4F9S8o7gcRYav6_BDiYOF9qkNRv-5H?usp=sharing" target="_blank">
+              <img class="img-port" src="covid.png" alt="curvas roc-auc de modelos de classificação">
+              <div class="centered">Classificação - Base de Dados Covid</div>
+            </a>
+          </div>
+          <div class="port-container">
+            <a href="https://colab.research.google.com/drive/1QdxMA3O5C4OJ-3M-m6-fsBwh9vDaYtBP?usp=sharing" target="_blank">
+              <img class="img-port" src="nlp.png" alt="gráfico ocorrência de palavras">
+              <div class="centered">NLP - Classificação de sentimento de Tweets</div>
+            </a>
+          </div>
+          <div class="port-container">
+            <a href="https://share.streamlit.io/migupry/pokemondata/main/dash.py" target="_blank">
+              <img class="img-port" src="poke.png" alt="gráfico de dispersão de tipos de pokémon">
+              <div class="centered">Dashboard - Visualização de dados de Pokémon</div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div id="port-web">
+        <a href="javascript:void(0)" class="icon-a">
+          <i class="fa-solid fa-caret-down rotate click-hide up important" hideObj="web-catalog"></i>
+        </a>
+        <h1>Portfólio Web:</h1>
+        <div id="web-catalog" class="port-catalog hidden">
+          <div class="port-container hidden">
+            <a href="https://chataround.us/c/bigbang/" class="disableClick" target="_blank">
+              <img class="img-port hidden" src="chataround.png" alt="rostos de Miguel e Pedro na plataforma ChatAround">
+              <div class="centered hidden">ChatAround</div>
+            </a>
+          </div>
+          <div class="port-container hidden">
+            <a href="https://mostracuite.github.io/" class="disableClick" target="_blank">
+              <img class="img-port hidden" src="cuite.png" alt="carrossel de filmes da Mostra Cuité">
+              <div class="centered hidden">Mostra Cuité</div>
+            </a>
+          </div>
+          <div class="port-container hidden">
+            <a href="https://www.miguel.dev.br/LabXP/" class="disableClick" target="_blank">
+              <img class="img-port hidden" src="labxp.png" alt="página inicial LabXP com moça de olhos fechados">
+              <div class="centered hidden">LabXP</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Add rotation ability for elements with .rotate class
+      document.querySelectorAll('.rotate').forEach(i => {
+        i.addEventListener('click', () => {
+          i.classList.toggle("up");
+        });
+      });
+      function toggleHiddenNodes(elem, tagName) {
+        // Toggle visibility on element's children by tag
+        var nodes = elem.getElementsByTagName(tagName);
+        for(var j=0; j<nodes.length; j++) {
+          nodes[j].classList.toggle("hidden");
+        }
+      }
+      function toggleAnchorClicks(elem){
+        // Toggle clickability on child anchors of element
+        anchors = elem.getElementsByTagName("a");
+        for(var j=0; j<anchors.length; j++) {
+          anchors[j].classList.toggle("disableClick");
+        }
+      }
+      document.querySelectorAll('.click-hide').forEach(i => {
+      // Add hide ability on elements with class .click-hide
+        i.addEventListener('click', () => {
+          var tgt_id = i.getAttribute("hideObj");
+          var x = document.getElementById(tgt_id);
+          x.classList.toggle("hidden");
+          toggleHiddenNodes(x, "div")
+          toggleHiddenNodes(x, "img")
+          toggleAnchorClicks(x)
+        });
+      });
+    </script>
   </body>
 </html>

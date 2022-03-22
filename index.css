@@ -1,23 +1,135 @@
 body {
-  margin-top: 25%;
+  margin-top: 1em;
   background-color: #001b33;
 }
 *{
 font-family: 'Roboto', sans-serif;
-font-size: 1.25em;
+font-size: 2rem;
 }
+
+@media only screen and (min-width: 992px) {
+  /* For desktop: */
+  *{
+  font-size: 1.75rem;
+  }
+}
+
 h1 {
   color: #80ffbb;
-  margin-left: 20px;
+  display: inline;
 }
+
 p {
   color: #ff9d00;
-  margin-left: 20px;
+  margin-left: 1em;
   max-width: 1000px;
+}
+
+.aligned {
+  margin-left: 1em;
+}
+
+.emphasis {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+i {
+  color: #ff9d00;
+}
+
+i:hover, i:focus, i:active {
+  color: #ff9d00;
+}
+
+.icon-a {
+  text-decoration: none !important;
 }
 
 .important{
 color: #ff0044;	
+}
+
+.port-catalog{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  width: fit-content;
+  padding: 0.5em 1em;
+  gap: 1em;
+}
+
+.rotate{
+  -moz-transition: all 0.25s linear;
+  -webkit-transition: all 0.25s linear;
+  transition: all 0.25s linear;
+}
+
+.click-hide{
+  margin-left: 1em;
+}
+
+.rotate.up{
+  -ms-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  -webkit-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+}
+
+.port-container{
+  position:relative;
+  width: min-content;
+  height: min-content;
+  zoom: 1;
+  -webkit-transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+  -moz-transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+  -ms-transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+  -o-transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+  transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+  display: flex;
+  opacity: 1;
+}
+
+.port-container:hover{
+  transform: scale(1.02);
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+}
+
+.img-port{
+  width: 5em;
+  height: 5em;
+}
+
+.hidden{
+  height: 0;
+  opacity: 0;
+  transition: height 0.5s, opacity 0.5s linear;
+}
+
+.disableClick{
+  pointer-events: none;
+}
+
+.port-meta > *:not(:last-child) {
+  margin-bottom: 1em; 
+} 
+
+.centered {
+  font-size: 0.70em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width:100%;    
+  height:100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background:rgba(0, 0, 0, 0.75);
+  color: #ff9d00;
+  transition: height 0s, opacity 0s linear;
 }
 
 a, a:hover, a:focus, a:active {
