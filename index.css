@@ -4,13 +4,12 @@ body {
 }
 *{
 font-family: 'Roboto', sans-serif;
-font-size: 2rem;
+font-size: 1.5rem;
 }
 
-@media only screen and (min-width: 992px) {
-  /* For desktop: */
+@media only screen and (max-width: 991px) and (min-width: 801px)  {
   *{
-  font-size: 1.75rem;
+    font-size: 2rem;
   }
 }
 
